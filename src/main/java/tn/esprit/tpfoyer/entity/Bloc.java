@@ -23,6 +23,6 @@ public class Bloc {
     Foyer foyer;
 
     @OneToMany (cascade = CascadeType.ALL,mappedBy ="bloc")
-    Set<Chambre> Chambres;
+    Set<Chambre> chambres;
 
 }
