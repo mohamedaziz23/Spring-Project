@@ -24,6 +24,12 @@ public class BlocServiceImpl implements IBlocService{
     }
 
     @Override
+    public Optional<Bloc> retrieveBlocByNomAndCapacite(String nomBloc,Long capacite) {
+        return Optional.ofNullable(blocRepository.findByNomBlocAndCapaciteBlocGreaterThan(nomBloc,capacite));
+
+    }
+
+    @Override
     public Bloc addBloc(Bloc b) {
         return blocRepository.save(b);
     }

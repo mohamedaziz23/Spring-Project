@@ -1,5 +1,6 @@
 package tn.esprit.tpfoyer.controllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.tpfoyer.entity.Universite;
@@ -7,7 +8,7 @@ import tn.esprit.tpfoyer.services.IUniversiteService;
 
 import java.util.List;
 import java.util.Optional;
-
+@Tag(name = "Gestion Universite")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/universite")

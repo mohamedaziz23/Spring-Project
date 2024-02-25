@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.tpfoyer.entity.Bloc;
 @Repository
 public interface BlocRepository extends JpaRepository<Bloc,Long> {
+
+    Bloc findByNomBlocAndCapaciteBlocGreaterThan(String nom,Long capacite);
 }

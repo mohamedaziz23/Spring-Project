@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface IBlocService {
     public List<Bloc> retrieveAllBlocs();
     public Optional<Bloc> retrieveBloc(Long blocId);
+    public Optional<Bloc> retrieveBlocByNomAndCapacite(String nomBloc,Long capacite);
     public Bloc addBloc(Bloc c);
     public void removeBloc(Long blocId);
     public Bloc modifyBloc(Bloc bloc);

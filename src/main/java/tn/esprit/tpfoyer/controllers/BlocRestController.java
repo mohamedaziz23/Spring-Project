@@ -1,5 +1,6 @@
 package tn.esprit.tpfoyer.controllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.tpfoyer.entity.Bloc;
@@ -7,7 +8,7 @@ import tn.esprit.tpfoyer.services.IBlocService;
 
 import java.util.List;
 import java.util.Optional;
-
+@Tag(name = "Gestion Bloc")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/bloc")
@@ -24,6 +25,12 @@ public class BlocRestController {
     @GetMapping("/retrieve-bloc/{bloc-id}")
     public Optional<Bloc> retrieveBloc(@PathVariable("bloc-id") Long blocId) {
         Optional<Bloc> Bloc = blocService.retrieveBloc(blocId);
+        return Bloc;
+    }
+
+    @GetMapping("/retrieve-bloc/{bloc-nom}/{capacite}")
+    public Optional<Bloc> retrieveBlocByNom(@PathVariable("bloc-nom") String nomBloc, @PathVariable("capacite") Long capacite) {
+        Optional<Bloc> Bloc = blocService.retrieveBlocByNomAndCapacite(nomBloc,capacite);
         return Bloc;
     }
 
